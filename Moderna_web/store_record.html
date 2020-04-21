@@ -1,0 +1,164 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+      <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+	<!-- Bootstrap Styles-->
+    <link href="assets/css/bootstrap.css" rel="stylesheet" />
+     <!-- FontAwesome Styles-->
+    <link href="assets/css/font-awesome.css" rel="stylesheet" />
+     <!-- Morris Chart Styles-->
+   
+        <!-- Custom Styles-->
+    <link href="assets/css/custom-styles.css" rel="stylesheet" />
+     <!-- Google Fonts-->
+   <link href='http://fonts.useso.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
+     <!-- TABLE STYLES-->
+    <link href="assets/js/dataTables/dataTables.bootstrap.css" rel="stylesheet" />
+    <link href="assets/css/style.css" rel="stylesheet">
+    <link href="assets/vendor/icofont/icofont.min.css" rel="stylesheet">
+</head>
+<body>
+    <div id="wrapper">
+        <!-- ======= Header ======= -->
+  <header id="new_header" class="fixed-top header-transparent">
+    <div class="container">
+
+      <div class="logo float-left">
+        <h2 class="text-light"><a href="index.html"><span>基于区块链技术数字版权存证管理系统</span></a></h2>
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+      </div>
+
+      <nav class="nav-menu float-right d-none d-lg-block">
+        <ul>
+            <li class="active"><a href="index.html">首页</a></li>
+            <li class="drop-down"><a href="#">区块链版权存证</a>
+              <ul>
+                <li><a href="store_img.html">图片存证</a></li>
+                <li><a href="store_text.html">文本存证</a></li>
+                <li><a href="store_vidio.html">视频存证</a></li>
+                <li><a href="store_audio.html">音频存证</a></li>
+              </ul>
+            </li>
+            <li><a href="store_trade.html">作品交易登记</a></li>
+            <li class="drop-down"><a href="#">个人信息</a>
+                <ul>
+                  <li><a href="personal_info.html">我的主页</a></li>
+                  <li><a href="store_record.html">存证记录</a></li>
+                  <li><a href="trade_record.html">交易记录</a></li>
+                </ul>
+              </li>
+            <li><a href="#">举报</a></li>
+        </ul>
+      </nav><!-- .nav-menu -->
+    </div>
+  </header><!-- End Header -->
+        <nav class="navbar-default navbar-side" role="navigation">
+            <div class="sidebar-collapse">
+                <ul class="nav" id="main-menu">
+                    <li>
+                        <a href="personal_info.html"><i class="fa fa-edit"></i> 个人信息 </a>
+                    </li>
+                    <li>
+                        <a href="store_record.html" class="active-menu"><i class="fa fa-table"></i> 存证记录</a>
+                    </li>
+                    <li>
+                        <a href="trade_record.html"><i class="fa fa-table"></i> 交易记录</a>
+                    </li>
+
+
+                </ul>
+
+            </div>
+
+        </nav>
+        <!-- /. NAV SIDE  -->
+        <div id="page-wrapper" >
+            <div id="page-inner">
+			 <div class="row">
+                    <div class="col-md-12">
+                        <h1 class="page-header">
+                            中国传媒大学 <small>基于区块链的数字版权保护系统</small>
+                        </h1>
+                    </div>
+                </div> 
+                 <!-- /. ROW  -->
+               
+            <div class="row">
+                <div class="col-md-12">
+                    <!-- Advanced Tables -->
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                             存证记录
+                        </div>
+                        <div class="panel-body">
+                            <div class="table-responsive">
+                                <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+                                    <thead>
+                                        <tr>
+                                            <th>作品ID</th>
+                                            <th>作品名称</th>
+                                            <th>作品类型</th>
+                                            <th>存证时间</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr class="odd gradeX">
+                                            <td>&nbsp</td>
+                                            <td></td>
+                                            <td class="center"></td>
+                                            <td class="center"></td>
+                                        </tr>
+                                        <tr class="even gradeC">
+                                            <td>&nbsp</td>
+                                            <td></td>
+                                            <td class="center"></td>
+                                            <td class="center"></td>
+                                        </tr>
+                                        <tr class="odd gradeA">
+                                            <td>&nbsp</td>
+                                            <td></td>
+                                            <td class="center"></td>
+                                            <td class="center"></td>
+                                        </tr>
+                                        
+                                    </tbody>
+                                </table>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <!--End Advanced Tables -->
+                </div>
+            </div>
+                <!-- /. ROW  -->
+        </div>
+    </div>
+             <!-- /. PAGE INNER  -->
+            </div>
+         <!-- /. PAGE WRAPPER  -->
+     <!-- /. WRAPPER  -->
+    <!-- JS Scripts-->
+    <!-- jQuery Js -->
+    <script src="assets/js/jquery-1.10.2.js"></script>
+      <!-- Bootstrap Js -->
+    <script src="assets/js/bootstrap.min.js"></script>
+    <!-- Metis Menu Js -->
+    <script src="assets/js/jquery.metisMenu.js"></script>
+     <!-- DATA TABLE SCRIPTS -->
+    <script src="assets/js/dataTables/jquery.dataTables.js"></script>
+    <script src="assets/js/dataTables/dataTables.bootstrap.js"></script>
+        <script>
+            $(document).ready(function () {
+                $('#dataTables-example').dataTable();
+            });
+    </script>
+         <!-- Custom Js -->
+    <script src="assets/js/custom-scripts.js"></script>
+    
+   
+</body>
+</html>
