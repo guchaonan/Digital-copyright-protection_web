@@ -6,6 +6,87 @@
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
   <title>Moderna Bootstrap Template - Index</title>
+  <script>
+      var pct=false;
+      function Check_ALL(){
+          var span=document.getElementById("ufile_span");
+          var flag=(Check_empty("uname")&&Check_empty("utitle")&&Check_empty("uticher")&&Check_Cate()&&pct);
+          if(flag){
+              alert('提交成功!');
+          }
+          else{
+              alert('填入信息不合法或者有必填项未填，请重新填写!');
+          }
+          if(pct==false){
+            span.innerText="请上传你的作品!";
+            span.style.color="red";
+          }
+          return flag;
+      }
+      function Check_empty(id){
+          var inp=document.getElementById(id);
+          var val=inp.value;
+          var span=document.getElementById(id+"_span");
+          var alt=inp.alt;
+          if(val==null||val==""){
+              span.innerText=alt+"不能为空!";
+              span.style.color="red";
+              return false;
+          }
+          else{
+              span.innerText="OK!";
+              span.style.color="green";
+              return true;
+          }
+      }
+      function Check_Cate(){
+          var cate=document.getElementsByName("ucate");
+          var span=document.getElementById("ucate_span");
+          for (var i=0;i<8;i++){
+              if(cate[i].checked){
+                  span.innerText="已选择!";
+                  span.style.color="green";
+                  return true;
+              }
+          }
+          span.innerText="请选择作品类别!";
+          span.style.color="red";
+          return false;
+      }
+      function Get_number(id){
+         var inp=document.getElementById(id);
+         var length=inp.value.length;
+         var span=document.getElementById(id+"_span_num");
+         if(id=="uintro"){
+             span.innerText=length+"/233";
+         }else{
+             span.innerText=length+"/20";
+         }
+      }
+      function pictype(id){
+          var File=document.getElementById(id);
+          var fileType=[".jpg",".jpeg",".png"]
+          var span=document.getElementById("ufile_span");
+          var filePath=File.value;
+          var fileEnd=filePath.substring(filePath.indexOf("."));
+          if(File.value==null||File.value==""){
+              span.innerText="请上传你的作品!";
+              span.style.color="red";
+              return false;
+          }
+          for(var i=0;i<fileType.length;i++){
+              if(fileType[i]==fileEnd){
+                  span.innerText="文件合法";
+                  span.style.color="green";
+                  pct=true;
+                  return true;
+              }
+          }
+          span.innerText="不接受此类型的文件!";
+          span.style.color="red";
+          return false;
+      }
+  </script>
   <meta content="" name="descriptison">
   <meta content="" name="keywords">
 
@@ -91,75 +172,82 @@
                 <div class="upload-image center">
                     <div class="upload-list"></div>
                     <div class="upload-btn border-box" style="position: relative;">
-                        <input type="file" accept="image/png, image/jpeg, image/jpg" multiple="multiple" class="upload pointer">
+                        <input type="file" id="ufile" name="ufile" accept="image/png, image/jpeg, image/jpg" multiple="multiple" class="upload pointer" onchange="pictype('ufile')">
                         <i class="icon-font icon-add pointer"></i>
                     </div>
                 </div>
+                <div class="text"><span id="ufile_span"></span></div>
                 <div data-v-6d4c44c7="" class="upload-title upload-info">
                     <span data-v-6d4c44c7="" class="dot"></span>
                     <span data-v-6d4c44c7="" class="upload-title-text">作品标题</span>
                     <div data-v-46d79536="" data-v-6d4c44c7="" class="text-input">
-                        <input data-v-46d79536="" type="text" placeholder="请输入标题" maxlength="20" class="border-box">
-                        <span data-v-46d79536="" class="text-length">0/20</span>
+                        <input data-v-46d79536="" type="text" name="utitle" id="utitle" value="" alt="作品标题" placeholder="请输入标题" maxlength="20" class="border-box" onkeyup="Get_number('utitle')" onblur="Check_empty('utitle')">
+                        <span data-v-46d79536="" id="utitle_span_num" class="text-length"></span>
                     </div>
+                    <p id="utitle_span"></p>
                 </div>
                 <div data-v-6d4c44c7="" class="upload-title upload-info">
                     <span data-v-6d4c44c7="" class="dot"></span>
                     <span data-v-6d4c44c7="" class="upload-title-text">作者&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span>
                     <div data-v-46d79536="" data-v-6d4c44c7="" class="text-input">
-                        <input data-v-46d79536="" type="text" placeholder="请输入作者" maxlength="20" class="border-box">
+                        <input data-v-46d79536="" type="text" name="uname" id="uname" value="" alt="作者" placeholder="请输入作者" maxlength="20" class="border-box" onkeyup="Get_number('uname')" onblur="Check_empty('uname')">
+                        <span data-v-46d79536="" id="uname_span_num" class="text-length"></span>
                     </div>
+                    <p id="uname_span"></p>
                 </div>
                 <div data-v-6d4c44c7="" class="upload-intro">
                     <span data-v-6d4c44c7="" class="upload-title-text">作品描述</span>
                     <div data-v-a138d0b4="" data-v-6d4c44c7="" class="text-box">
-                        <textarea data-v-a138d0b4="" maxlength="233" placeholder="请输入作品介绍" class="border-box" style="height: 112px;"></textarea>
-                        <span data-v-a138d0b4="" class="word-num">0/233</span>
+                        <textarea data-v-a138d0b4="" name="uintro" id="uintro" value="" maxlength="233" placeholder="请输入作品介绍" class="border-box" style="height: 112px;" onkeyup="Get_number('uintro')"></textarea>
+                        <span data-v-a138d0b4="" id="uintro_span_num" class="word-num"></span>
                     </div>
                 </div>
                 <div data-v-6d4c44c7="" class="upload-subtype upload-info">
                     <span data-v-6d4c44c7="" class="dot"></span>
                     <span data-v-6d4c44c7="" class="upload-title-text">作品标签</span>
                     <div data-v-66e85c2b="" data-v-6d4c44c7="" class="checkbox pointer">
-                        <input type="checkbox" data-v-66e85c2b="" class="radio-btn border-box"></input>
+                        <input type="checkbox" data-v-66e85c2b="" name="ucate" id="0" class="radio-btn border-box" onclick="Check_Cate()"></input>
                         <span data-v-66e85c2b="" class="text">风景</span>
                     </div>
                     <div data-v-66e85c2b="" data-v-6d4c44c7="" class="checkbox pointer">
-                        <input type="checkbox" data-v-66e85c2b="" class="radio-btn border-box"></input>
+                        <input type="checkbox" data-v-66e85c2b="" name="ucate" id="1" class="radio-btn border-box" onclick="Check_Cate()"></input>
                         <span data-v-66e85c2b="" class="text">人物</span>
                     </div>
                     <div data-v-66e85c2b="" data-v-6d4c44c7="" class="checkbox pointer">
-                        <input type="checkbox" data-v-66e85c2b="" class="radio-btn border-box"></input>
+                        <input type="checkbox" data-v-66e85c2b="" name="ucate" id="2" class="radio-btn border-box" onclick="Check_Cate()"></input>
                         <span data-v-66e85c2b="" class="text">动物</span>
                     </div>
                     <div data-v-66e85c2b="" data-v-6d4c44c7="" class="checkbox pointer">
-                        <input type="checkbox" data-v-66e85c2b="" class="radio-btn border-box"></input>
+                        <input type="checkbox" data-v-66e85c2b="" name="ucate" id="3" class="radio-btn border-box" onclick="Check_Cate()"></input>
                         <span data-v-66e85c2b="" class="text">卡通</span>
                     </div>
                     <span data-v-66e85c2bkg="" data-v-6d4c44c7="" class="checkbox pointer"></span>
                     <div data-v-66e85c2b="" data-v-6d4c44c7="" class="checkbox pointer" >
-                        <input type="checkbox" data-v-66e85c2b="" class="radio-btn border-box"></input>
+                        <input type="checkbox" data-v-66e85c2b="" name="ucate" id="4" class="radio-btn border-box" onclick="Check_Cate()"></input>
                         <span data-v-66e85c2b="" class="text">植物</span>
                     </div>
                     <div data-v-66e85c2b="" data-v-6d4c44c7="" class="checkbox pointer">
-                        <input type="checkbox" data-v-66e85c2b="" class="radio-btn border-box"></input>
+                        <input type="checkbox" data-v-66e85c2b="" name="ucate" id="5" class="radio-btn border-box" onclick="Check_Cate()"></input>
                         <span data-v-66e85c2b="" class="text">建筑</span>
                     </div>
                     <div data-v-66e85c2b="" data-v-6d4c44c7="" class="checkbox pointer">
-                        <input type="checkbox" data-v-66e85c2b="" class="radio-btn border-box"></input>
+                        <input type="checkbox" data-v-66e85c2b="" name="ucate" id="6" class="radio-btn border-box" onclick="Check_Cate()"></input>
                         <span data-v-66e85c2b="" class="text">创意</span>
                     </div>
                     <div data-v-66e85c2b="" data-v-6d4c44c7="" class="checkbox pointer">
-                        <input type="checkbox" data-v-66e85c2b="" class="radio-btn border-box"></input>
+                        <input type="checkbox" data-v-66e85c2b="" name="ucate" id="7" class="radio-btn border-box" onclick="Check_Cate()"></input>
                         <span data-v-66e85c2b="" class="text">其他</span>
                     </div>
+                    <p id="ucate_span"></p>
                 </div>
                 <div data-v-6d4c44c7="" class="upload-title upload-info">
                     <span data-v-6d4c44c7="" class="dot"></span>
                     <span data-v-6d4c44c7="" class="upload-title-text">指导老师</span>
                     <div data-v-46d79536="" data-v-6d4c44c7="" class="text-input">
-                        <input data-v-46d79536="" type="text" placeholder="请输入指导老师" maxlength="20" class="border-box">
+                        <input data-v-46d79536="" type="text"name="uticher" id="uticher" value="" alt="指导老师"  placeholder="请输入指导老师" maxlength="20" class="border-box" onkeyup="Get_number('uticher')" onblur="Check_empty('uticher')">
+                        <span data-v-46d79536="" id="uticher_span_num" class="text-length"></span>
                     </div>
+                    <p id="uticher_span"></p>
                 </div>
                 <div data-v-6d4c44c7="" class="upload-subtype upload-info">
                     <span data-v-6d4c44c7="" class="dot"></span>
@@ -173,8 +261,10 @@
                         <span data-v-66e85c2b="" class="text">否</span>
                     </div>
                 </div>
-                <div data-v-6d4c44c7="" class="submit-btn-wrapper">
-                     <div class="submit-btn pointer">提交发布</div>
+                <div data-v-6d4c44c7="" class="submit-btn-wrapper" align="center">
+                     <button type="button" class="submit-btn pointer" onclick="Check_ALL()">
+                         提交发布
+                     </button>
                </div>
             </div>
         </div>
