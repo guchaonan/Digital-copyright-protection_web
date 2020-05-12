@@ -32,7 +32,21 @@
 </head>
 
 <body>
-
+  <script>
+    function checkform(){  
+      var num = document.getElementById('user_num').value;
+      var pawd = document.getElementById('user_pswd').value;
+      if(num==null||num==""){
+        alert("学号或教职工号不能为空");  
+        return false; 
+      } 
+      if(pawd==null||pawd==""){
+        alert("密码不能为空");
+        return false;
+      }
+      return true;
+    }
+  </script>
   <!-- ======= Header ======= -->
   <header id="new_header" class="fixed-top header-transparent">
     <div class="container">
@@ -66,11 +80,11 @@
                   <div >
                     <div class="login_title"><a id="login_title">校内用户登录</a></div>
                     
-                    <input id="user_num" type="text" placeholder="请输入学号/教职工号">
+                    <input id="user_num" name="user_num" type="text" placeholder="请输入学号/教职工号">
                   </div>
                   <br>
                   <div  > 
-                    <input  id="user_pswd" type="password" placeholder="请输入密码">
+                    <input  id="user_pswd" name="user_num" type="password" placeholder="请输入密码">
                   </div>
 
                   <div id="otherusers"><a id="otherusers" href="login_others.html">非校内用户</a></div>
@@ -79,7 +93,7 @@
                   
                   <!-- 登录按钮 -->
                   <div class="btn">
-                                        <input id="btn_login" type="button" value="登录" >
+                                        <input id="btn_login" type="button" onclick="checkform()" value="登录" >
                   </div>
                   
                       <!-- <div class="carousel-item active">

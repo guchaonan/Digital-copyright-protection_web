@@ -33,6 +33,32 @@
 
 <body>
 
+  <script>
+    //检查手机号格式
+    function checkMobile(){  
+      var phone = document.getElementById('user_phonenum').value;
+      if(!(/^1[3456789]\d{9}$/.test(phone))){
+        user_phonenum.focus(); 
+        alert("手机号码有误，请重填");  
+        return false; 
+      } 
+      return true;
+    }
+
+    function CheckPswd(){
+      var pawd=document.getElementById('user_pswd');
+      var rpawd=document.getElementById('user_repswd');
+      if (pawd != rpawd) {
+        document.getElementById('user_repswd_span').innerText="您两次输入的密码不一样！";
+        document.getElementById('user_repswd_span').style.color="red";
+        return false;
+        }
+      return true;
+    }
+
+  </script>
+  
+
   <!-- ======= Header ======= -->
   <header id="new_header" class="fixed-top header-transparent">
     <div class="container">
@@ -66,9 +92,9 @@
                   <div >
                     <div class="login_title"><a id="login_title">校外用户注册</a></div>
                     
-                    <input id="user_phonenum" type="text" placeholder="请输入手机号">
+                    <input id="user_phonenum" name="user_phonenum" type="text" placeholder="请输入手机号">
                   </div>
-                  <div><input id="btn_sendvercode" type="button" value="发送验证码"></div>
+                  <div><input id="btn_sendvercode" type="button" onclick="checkMobile()" value="发送验证码"></div>
                     
                   <br>
                   <div  > 
@@ -76,13 +102,14 @@
                   </div>
                   <br>
                   <div>
-                    <input id="user_pswd" type="password" placeholder="请输入密码">
+                    <input id="user_pswd" name="user_pswd" type="password" placeholder="请输入密码">
                    </div>  
                    <br>
                    <div>
-                     <input id="user_repswd" type="password" placeholder="请再次输入密码">
-
+                    <input id="user_repswd" name="user_repswd" type="password" placeholder="请再次输入密码">
+                    <p id='user_repswd_span'></p>
                    </div>
+                   
                    <br>
                     
                 
@@ -92,7 +119,7 @@
                   
                   <!-- 注册按钮 -->
                   <div class="btn">
-                       <input id="btn_register" type="button" value="注册">
+                       <input id="btn_register" type="button" onclick="CheckPswd()" value="注册">
                   </div>
                   
                       <!-- <div class="carousel-item active">
