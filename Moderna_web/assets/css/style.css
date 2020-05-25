@@ -46,7 +46,7 @@ h1, h2, h3, h4, h5, h6, .font-primary {
   color: #ffffff;
   margin-bottom: 20px;
 }
-#user_num,#user_phonnum{
+ #login_content_bg .login_box #user_num, #user_phonenum, #user_ver{
   width: 300px;
   /* margin-top: 220px; */
   border:none;
@@ -62,7 +62,7 @@ h1, h2, h3, h4, h5, h6, .font-primary {
   margin-top: 5px;
   padding-left: 18px;
 }
-#user_pswd{
+.login_box #login_context #user_pswd, #user_repswd{
   width: 300px;
   border:none;
   outline-style: none;
@@ -87,10 +87,8 @@ h1, h2, h3, h4, h5, h6, .font-primary {
   margin-left: 85px;
 }
 /* 登录按钮 */
-.btn{
-  
-}
-.btn #btn_login{
+
+.btn #btn_login,#btn_register{
   width: 300px;
   height: 30px;
   border-radius: 8px;
@@ -277,6 +275,7 @@ h1, h2, h3, h4, h5, h6, .font-primary {
   border-radius: 3px;
   opacity: 0.9;
   }
+
 /* 详情界面 */
 #app .details_contentpart{
   height: 100%;
@@ -309,6 +308,19 @@ h1, h2, h3, h4, h5, h6, .font-primary {
 .category-wrapper .details_contentpart .details_detail{
   font-size: 16px;
 }
+/* 主图下标签显示 */
+.category-wrapper .details_contentpart .details_tags span{
+  font-size: 10px;
+  color: #fff;
+  background-color:#4ab0e7;
+  margin-left: 5px;
+  border:none;
+  outline-style: none;
+  /* 设置圆角效果 */
+  border-radius: 3px;
+  opacity: 0.9;
+  
+}
 /* 联系我 */
 .category-wrapper .details_contentpart .details_contact{
   margin-left: 630px;
@@ -340,6 +352,53 @@ h1, h2, h3, h4, h5, h6, .font-primary {
 .category-wrapper .brose_texts_content .user_name{
   margin-left: 300px;
 }
+
+/* 版权溯源 */
+#app .category-wrapper .copyright_tracing_contentpart{
+ 
+  height: 100%;
+  width: 80%;
+  margin-left: 100px;
+  margin-top: 90px;
+  /* 测试用 */
+ /* background-color: #4c99c1;  
+   */
+}
+#app .category-wrapper .copyright_tracing_contentpart #copyrightTracing_searchbox{
+  margin-left: 300px;
+  display: flex;
+
+}
+.copyright_tracing_searchbox input{
+  width: 300px;
+  float: left;
+  flex: 4;
+  height: 30px;
+  outline: none;
+  border: 1px solid #4c99c1;
+  /* 盒子模型，怪异IE盒子模型，width=content+border*2+padding*2 */
+  box-sizing: border-box;
+  padding-left: 10px;
+}
+.copyright_tracing_searchbox button{
+  float: left;
+  flex: 1;
+  height: 30px;
+  background-color: #4c99c1;
+  color: white;
+  border-style: none;
+  outline: none;
+}
+.copyright_tracing_searchbox button i{
+  font-style: normal;
+}
+.copyright_tracing_searchbox button:hover{
+  font-size: 16px;
+}
+
+
+
+
 /*--------------------------------------------------------------
 # Navigation Menu
 --------------------------------------------------------------*/
@@ -402,6 +461,7 @@ h1, h2, h3, h4, h5, h6, .font-primary {
   font-weight: 500;
   text-transform: none;
   color: #1c3745;
+
 }
 
 .nav-menu .drop-down ul a:hover, .nav-menu .drop-down ul .active > a, .nav-menu .drop-down ul li:hover > a {
@@ -926,7 +986,7 @@ section {
 }
 
 .why-us .icon-box .title {
-  margin-left: 95px;
+  /* margin-left: 95px; */
   font-weight: 700;
   margin-bottom: 10px;
   font-size: 18px;
@@ -943,11 +1003,43 @@ section {
 }
 
 .why-us .icon-box .description {
-  margin-left: 95px;
+  /* margin-left: 95px; */
   line-height: 24px;
   font-size: 14px;
 }
+/* 首页 作品推荐 查看更多 右对齐 */
+.why-us .container .icon-box-more{
+  margin-left: 370px;
+}
+/* 音频推荐 */
+.why-us .audio-recommend-box{
+  float: left;
+  height: 100%;
+  width: 470px;
+  margin-top: 50px;
+  margin-left: 60px;
+  /* background-color: #18d26e; */
+}
+.why-us .audio-recommend-title{
+  float: left;
+   line-height: 24px;
+  font-size: 14px;
+  text-transform: uppercase;
+}
 
+/* 文本推荐 */
+.why-us .text-recommend-box{
+  float: left;
+  height: 100%;
+  width: 100%;
+  /* background-color: rgb(170, 10, 10); */
+}
+.why-us .text-recommend-title{
+  float: left;
+  line-height: 24px;
+  font-size: 14px;
+  text-transform: uppercase;
+}
 .why-us .video-box {
   position: relative;
 }
