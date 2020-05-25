@@ -14,9 +14,7 @@
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
-  <link
-    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,700,700i&display=swap"
-    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,700,700i&display=swap" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -30,20 +28,20 @@
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
 
-
+  
 </head>
 
 <body>
   <script>
-    function checkform() {
+    function checkform(){  
       var phone = document.getElementById('user_phonenum').value;
       var pawd = document.getElementById('user_pswd').value;
-      if (!(/^1[3456789]\d{9}$/.test(phone))) {
-        user_phonenum.focus();
-        alert("手机号码有误，请重填");
-        return false;
-      }
-      if (pawd == null || pawd == "") {
+      if(!(/^1[3456789]\d{9}$/.test(phone))){
+        user_phonenum.focus(); 
+        alert("手机号码有误，请重填");  
+        return false; 
+      } 
+      if(pawd==null||pawd==""){
         alert("密码不能为空");
         return false;
       }
@@ -55,14 +53,14 @@
     <div class="container">
 
       <div class="logo float-left">
-        <h2 class="text-light"><a href="index_unlogin.html"><span>基于区块链技术数字版权存证管理系统</span></a></h2>
+        <h2 class="text-light"><a href="index_unlogin.html" ><span >基于区块链技术数字版权存证管理系统</span></a></h2>
         <!-- Uncomment below if you prefer to use an image logo -->
         <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
       </div>
 
       <nav class="nav-menu float-right d-none d-lg-block" background:src="hreo-bg.jpg">
         <ul>
-          <li><a href="index_unlogin.html">首页<i class="la la-angle-down"></i></a></li>
+          <li ><a href="index_unlogin.html">首页<i class="la la-angle-down"></i></a></li>
           <li><a href="#">关于我们</a></li>
           <!-- 当前界面按钮变色 要设置class="active"  -->
           <li class="active"><a href="login_stu.html">登录</a></li>
@@ -74,48 +72,48 @@
 
   <main id="main">
     <div id="login_content_bg">
-      <!-- 登录框-->
-      <div class="login_box">
-        <!-- 登录表单 -->
-        <form>
-          <div class="container" id="login_context">
+            <!-- 登录框-->
+            <div class="login_box">
+              <!-- 登录表单 -->
+              <form>
+                <div class="container" id ="login_context">
+                  
+                  <div >
+                    <div class="login_title"><a id="login_title">校外用户登录</a></div>
+                    
+                    <input id="user_phonenum" name="user_phonenum" type="text" placeholder="请输入手机号">
+                  </div>
+                  <br>
+                  <div  > 
+                    <input  id="user_pswd" name="user_pswd" type="password" placeholder="请输入密码">
+                  </div>
 
-            <div>
-              <div class="login_title"><a id="login_title">校外用户登录</a></div>
+                  <div id="to_register"><a id="otherusers" href="login_register.html">没账号？注册</a></div>
+                  <div id="forgetpswd"><a id="forgetpswd" href="#">忘记密码？</a></div>
 
-              <input id="user_phonenum" name="user_phonenum" type="text" placeholder="请输入手机号">
-            </div>
-            <br>
-            <div>
-              <input id="user_pswd" name="user_pswd" type="password" placeholder="请输入密码">
-            </div>
-
-            <div id="to_register"><a id="otherusers" href="login_register.html">没账号？注册</a></div>
-            <div id="forgetpswd"><a id="forgetpswd" href="#">忘记密码？</a></div>
-
-
-            <!-- 登录按钮 -->
-            <div class="btn">
-              <input id="btn_login" type="button" onclick="checkform()" value="登录">
-            </div>
-
-            <!-- <div class="carousel-item active">
+                  
+                  <!-- 登录按钮 -->
+                  <div class="btn">
+                                        <input id="btn_login" type="button" onclick="checkform()" value="登录">
+                  </div>
+                  
+                      <!-- <div class="carousel-item active">
                         <div class="carousel-container">
                           <a href="" class="btn-get-started animated fadeInUp">登录</a>
                         </div>
                       </div> -->
-
-
-
-          </div>
-        </form>
-      </div>
+                   
+                               
+              
+                </div>
+              </form>
+            </div>
     </div>
-
+  
   </main><!-- End #main -->
 
   <!-- ======= Footer ======= -->
-
+ 
 
   <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
 
