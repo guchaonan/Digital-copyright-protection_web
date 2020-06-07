@@ -90,7 +90,7 @@ h1, h2, h3, h4, h5, h6, .font-primary {
 .btn #btn_login,#btn_register{
   
 }
-.btn #btn_login{
+.btn #btn_login,#btn_register{
   width: 300px;
   height: 30px;
   border-radius: 8px;
@@ -145,6 +145,35 @@ h1, h2, h3, h4, h5, h6, .font-primary {
 .nav_menu_left ul li a:hover{
   padding-top: 10px;
   color: rgb(73, 161, 219);
+}
+/* 作品存证搜索框 */
+.upload-image-wrapper .storetrade_searchbox input{
+  width: 360px;
+  float: left;
+  flex: 4;
+  height: 30px;
+  outline: none;
+  border: 1px solid #d3dadf;
+  /* 盒子模型，怪异IE盒子模型，width=content+border*2+padding*2 */
+  box-sizing: border-box;
+  padding-left: 10px;
+  /* 设置圆角效果 */
+  border-radius: 3px;
+  opacity: 0.9;
+
+}
+.upload-image-wrapper .storetrade_searchbox input :hover{
+  border-color: #999;
+  color: #333;
+}
+.storetrade_searchbox button{
+  float: left;
+  flex: 1;
+  height: 30px;
+  background-color: #4c99c1;
+  color: white;
+  border-style: none;
+  outline: none;
 }
 
 
@@ -332,6 +361,18 @@ h1, h2, h3, h4, h5, h6, .font-primary {
   color:#4c99c1; 
 
 }
+
+/* audio详情 */
+.category-wrapper .details_contentpart .detalis_audio_audio audio{
+  margin-top: 60px;
+  height: 150px;
+  width: 500px;
+  margin-left:200px;
+  /* background-color: #fff; */
+  margin-bottom: 30px;
+  /* background: url(../img/a_tree.jpg)no-repeat center bottom;
+  background-size:cover; */
+}
 /* 作品浏览-文本 */
 .category-wrapper .brose_texts_content{
   font-size: 15px;
@@ -396,6 +437,53 @@ h1, h2, h3, h4, h5, h6, .font-primary {
 }
 .copyright_tracing_searchbox button:hover{
   font-size: 16px;
+}
+
+/* yan新增作品浏览部分 */
+.col_list .sub-nav.copyright_tracing_searchbox_w{  
+  /* margin-left: 400px; */  
+  display: flex; 
+}
+.copyright_tracing_searchbox_w input{  
+  width: 300px;  
+  float: left;  
+  flex: 4;  
+  height: 30px;  
+  outline: none;  
+  border: 2px solid #464747;  
+  /* 盒子模型，怪异IE盒子模型，width=content+border*2+padding*2 */  
+  box-sizing: border-box;  
+  padding-left: 10px;  
+  text-align: center;  
+  margin-top: 6px;  
+  margin-left: 400px;  
+  line-height: 30px;
+}
+.copyright_tracing_searchbox_w button{ 
+  float: left;  
+  flex: 1;  
+  height: 30px;  
+  background-color: #464747;  
+  color: white;  
+  border-style: none;  
+  outline: none;  
+  margin-top: 6px;  
+  text-align: center;  
+  vertical-align: middle;  
+  line-height: 30px; 
+}
+
+/* 作品浏览下小导航栏 */
+#wp_listcolumn_w41 .wp_listcolumn #wp_listcolumn_li {
+
+  float: left; 
+  margin-left: 20px;
+  margin-right: 20px;
+  
+}
+
+#wp_paging_w32 #wp_paging_w32_li{
+  float: left;
 }
 
 
